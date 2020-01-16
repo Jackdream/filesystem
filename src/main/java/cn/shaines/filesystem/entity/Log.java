@@ -16,7 +16,7 @@ public class Log {
 
     /** 主键 */
     @Id
-    private String id;
+    private long id;
     /** 访问ip */
     @Column(length=20)
     private String ip;
@@ -32,11 +32,11 @@ public class Log {
     @Column(length=256)
     private String result;
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public Log setId(String id) {
+    public Log setId(long id) {
         this.id = id;
         return this;
     }

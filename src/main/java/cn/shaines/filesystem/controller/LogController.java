@@ -45,7 +45,8 @@ public class LogController {
     @GetMapping("/page")
     @ResponseBody
     public Result page(@RequestParam(defaultValue = "0") int pageIndex, @RequestParam(defaultValue = "5") int pageSize, String name) {
-        Sort sort = new Sort(Sort.Direction.DESC, "date");
+//        Sort sort = new Sort(Sort.Direction.DESC, "date");
+    	Sort sort = Sort.by(Sort.Direction.DESC, "date");
         Pageable pageable = PageRequest.of(pageIndex, pageSize, sort);
         Page<Log> page = "".equalsIgnoreCase(name) ?
                 logService.findAll(pageable) :

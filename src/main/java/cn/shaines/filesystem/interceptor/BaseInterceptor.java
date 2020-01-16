@@ -46,7 +46,7 @@ public class BaseInterceptor implements HandlerInterceptor {
         }
 
         Log log = new Log();
-        log.setId(idWorker.nextId() + "");
+        log.setId(idWorker.nextId());
         log.setIp(MvcUtil.get().getIpAddress(request));
         log.setDate(new Date());
         log.setUri(request.getRequestURI());

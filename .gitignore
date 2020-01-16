@@ -46,3 +46,7 @@ hs_err_pid*
 *.iml
 out
 gen
+/target/
+.settings/
+.classpath
+.project

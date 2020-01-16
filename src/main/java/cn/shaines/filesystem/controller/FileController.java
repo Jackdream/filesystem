@@ -75,7 +75,8 @@ public class FileController {
     @GetMapping("/page")
     @ResponseBody
     public Result page(@RequestParam(defaultValue = "0") int pageIndex, @RequestParam(defaultValue = "5") int pageSize, @RequestParam String name) {
-        Sort sort = new Sort(Sort.Direction.DESC, "date", "id");
+//        Sort sort = new Sort(Sort.Direction.DESC, "date", "id");
+        Sort sort = Sort.by(Sort.Direction.DESC, "date", "id");
         Pageable pageable = PageRequest.of(pageIndex, pageSize, sort);
         Page<File> page = "".equals(name) ? fileService.findAll(pageable) : fileService.findAllByNameIsContaining(name, pageable);
         return Result.success("请求成功", page);
